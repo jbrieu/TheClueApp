@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Clu Item View Controller-->
@@ -26,19 +27,68 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yo7-jD-Yoh">
+                                <rect key="frame" x="16" y="90" width="568" height="490"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VMf-O4-a4L">
+                                    <size key="itemSize" width="261" height="258"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dUq-S3-EWD" customClass="CluChildrenCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="261" height="258"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-H5-32S">
+                                                    <rect key="frame" x="66" y="97" width="128" height="64"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="centerX" secondItem="dUq-S3-EWD" secondAttribute="centerX" id="R8u-6h-ECw"/>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="top" secondItem="dUq-S3-EWD" secondAttribute="topMargin" constant="89" id="aH2-uq-0cJ"/>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="leading" secondItem="dUq-S3-EWD" secondAttribute="leadingMargin" constant="58" id="yUA-ig-ab0"/>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="centerY" secondItem="dUq-S3-EWD" secondAttribute="centerY" id="yuV-FM-9Pp"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="childrenNameLabel" destination="kA9-H5-32S" id="Q0W-ie-hog"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="86M-4K-O1l"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AjW-rQ-Qag"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lya-lv-g18" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="5qs-3v-tbj"/>
                             <constraint firstAttribute="centerX" secondItem="Lya-lv-g18" secondAttribute="centerX" id="OTk-m6-b58"/>
+                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="top" secondItem="Lya-lv-g18" secondAttribute="bottom" constant="8" symbolic="YES" id="egI-kZ-ZZt"/>
+                            <constraint firstAttribute="bottom" secondItem="Yo7-jD-Yoh" secondAttribute="bottom" constant="20" symbolic="YES" id="v8f-s5-m8q"/>
+                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wwz-ud-rkd"/>
+                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="centerX" secondItem="Lya-lv-g18" secondAttribute="centerX" id="znj-BJ-ks3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="children" destination="Yo7-jD-Yoh" id="McY-IB-cvR"/>
                         <outlet property="itemNameLabel" destination="Lya-lv-g18" id="dv1-ds-XPF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="375" y="304"/>
         </scene>
     </scenes>
 </document>

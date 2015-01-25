@@ -63,7 +63,7 @@
     
     CluItem *root = [NSEntityDescription insertNewObjectForEntityForName:@"CluItem" inManagedObjectContext:[self managedObjectContext]];
     root.name = jsonRoot[@"name"];
-    root.name = jsonRoot[@"imageName"];
+    root.imageName = jsonRoot[@"imageName"];
     
     [self addChildrenToParentItem:root withArray:jsonRoot[@"children"]];
     
@@ -78,10 +78,10 @@
     {
         CluItem *child = [NSEntityDescription insertNewObjectForEntityForName:@"CluItem" inManagedObjectContext:[self managedObjectContext]];
         child.name = jsonChild[@"name"];
-        child.name = jsonChild[@"imageName"];
+        child.imageName = jsonChild[@"imageName"];
         
         [self addChildrenToParentItem:child withArray:jsonChild[@"children"]];
-        
+        [parentItem addChildrenObject:child];
         [child setParent:parentItem];
     }
 }

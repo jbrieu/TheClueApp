@@ -10,7 +10,7 @@
 
 @class CluItem;
 
-@interface CluItemViewController : UIViewController
+@interface CluItemViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, readwrite, strong) CluItem* item;
 

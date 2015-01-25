@@ -15,8 +15,9 @@
 		0139CD7F1A750A500062BE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0139CD7D1A750A500062BE40 /* LaunchScreen.xib */; };
 		0139CD8B1A750A500062BE40 /* ClueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD8A1A750A500062BE40 /* ClueTests.m */; };
 		0139CD981A750B5B0062BE40 /* CluItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD971A750B5B0062BE40 /* CluItemViewController.m */; };
-		0139CDA11A750C930062BE40 /* CluItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA01A750C930062BE40 /* CluItem.m */; };
 		0139CDA41A7516000062BE40 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0139CDA31A7516000062BE40 /* data.json */; };
+		0139CDA71A7595A10062BE40 /* CluChildrenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA61A7595A10062BE40 /* CluChildrenCollectionViewCell.m */; };
+		0139CDAA1A75984B0062BE40 /* CluItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA91A75984B0062BE40 /* CluItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +45,11 @@
 		0139CD8A1A750A500062BE40 /* ClueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueTests.m; sourceTree = "<group>"; };
 		0139CD961A750B5B0062BE40 /* CluItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItemViewController.h; sourceTree = "<group>"; };
 		0139CD971A750B5B0062BE40 /* CluItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItemViewController.m; sourceTree = "<group>"; };
-		0139CD9F1A750C930062BE40 /* CluItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItem.h; sourceTree = "<group>"; };
-		0139CDA01A750C930062BE40 /* CluItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItem.m; sourceTree = "<group>"; };
 		0139CDA31A7516000062BE40 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		0139CDA51A7595A10062BE40 /* CluChildrenCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluChildrenCollectionViewCell.h; sourceTree = "<group>"; };
+		0139CDA61A7595A10062BE40 /* CluChildrenCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluChildrenCollectionViewCell.m; sourceTree = "<group>"; };
+		0139CDA81A75984B0062BE40 /* CluItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItem.h; sourceTree = "<group>"; };
+		0139CDA91A75984B0062BE40 /* CluItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 			children = (
 				0139CD961A750B5B0062BE40 /* CluItemViewController.h */,
 				0139CD971A750B5B0062BE40 /* CluItemViewController.m */,
+				0139CDA51A7595A10062BE40 /* CluChildrenCollectionViewCell.h */,
+				0139CDA61A7595A10062BE40 /* CluChildrenCollectionViewCell.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -140,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				0139CD721A750A500062BE40 /* Clue.xcdatamodeld */,
-				0139CD9F1A750C930062BE40 /* CluItem.h */,
-				0139CDA01A750C930062BE40 /* CluItem.m */,
+				0139CDA81A75984B0062BE40 /* CluItem.h */,
+				0139CDA91A75984B0062BE40 /* CluItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,9 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0139CD981A750B5B0062BE40 /* CluItemViewController.m in Sources */,
+				0139CDAA1A75984B0062BE40 /* CluItem.m in Sources */,
 				0139CD741A750A500062BE40 /* Clue.xcdatamodeld in Sources */,
+				0139CDA71A7595A10062BE40 /* CluChildrenCollectionViewCell.m in Sources */,
 				0139CD711A750A500062BE40 /* AppDelegate.m in Sources */,
-				0139CDA11A750C930062BE40 /* CluItem.m in Sources */,
 				0139CD6E1A750A500062BE40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

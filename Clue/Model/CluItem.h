@@ -15,20 +15,15 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * imageName;
-@property (nonatomic, retain) NSOrderedSet *children;
+@property (nonatomic, retain) NSSet *children;
 @property (nonatomic, retain) CluItem *parent;
 @end
 
 @interface CluItem (CoreDataGeneratedAccessors)
 
-- (void)insertObject:(CluItem *)value inChildrenAtIndex:(NSUInteger)idx;
-- (void)removeObjectFromChildrenAtIndex:(NSUInteger)idx;
-- (void)insertChildren:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
-- (void)removeChildrenAtIndexes:(NSIndexSet *)indexes;
-- (void)replaceObjectInChildrenAtIndex:(NSUInteger)idx withObject:(CluItem *)value;
-- (void)replaceChildrenAtIndexes:(NSIndexSet *)indexes withChildren:(NSArray *)values;
 - (void)addChildrenObject:(CluItem *)value;
 - (void)removeChildrenObject:(CluItem *)value;
-- (void)addChildren:(NSOrderedSet *)values;
-- (void)removeChildren:(NSOrderedSet *)values;
+- (void)addChildren:(NSSet *)values;
+- (void)removeChildren:(NSSet *)values;
+
 @end
