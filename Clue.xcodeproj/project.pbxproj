@@ -10,11 +10,13 @@
 		0139CD6E1A750A500062BE40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD6D1A750A500062BE40 /* main.m */; };
 		0139CD711A750A500062BE40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD701A750A500062BE40 /* AppDelegate.m */; };
 		0139CD741A750A500062BE40 /* Clue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD721A750A500062BE40 /* Clue.xcdatamodeld */; };
-		0139CD771A750A500062BE40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD761A750A500062BE40 /* ViewController.m */; };
 		0139CD7A1A750A500062BE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0139CD781A750A500062BE40 /* Main.storyboard */; };
 		0139CD7C1A750A500062BE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0139CD7B1A750A500062BE40 /* Images.xcassets */; };
 		0139CD7F1A750A500062BE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0139CD7D1A750A500062BE40 /* LaunchScreen.xib */; };
 		0139CD8B1A750A500062BE40 /* ClueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD8A1A750A500062BE40 /* ClueTests.m */; };
+		0139CD981A750B5B0062BE40 /* CluItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CD971A750B5B0062BE40 /* CluItemViewController.m */; };
+		0139CDA11A750C930062BE40 /* CluItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA01A750C930062BE40 /* CluItem.m */; };
+		0139CDA41A7516000062BE40 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0139CDA31A7516000062BE40 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,17 @@
 		0139CD6F1A750A500062BE40 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0139CD701A750A500062BE40 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0139CD731A750A500062BE40 /* Clue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clue.xcdatamodel; sourceTree = "<group>"; };
-		0139CD751A750A500062BE40 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0139CD761A750A500062BE40 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0139CD791A750A500062BE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0139CD7B1A750A500062BE40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0139CD7E1A750A500062BE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0139CD841A750A500062BE40 /* ClueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0139CD891A750A500062BE40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0139CD8A1A750A500062BE40 /* ClueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueTests.m; sourceTree = "<group>"; };
+		0139CD961A750B5B0062BE40 /* CluItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItemViewController.h; sourceTree = "<group>"; };
+		0139CD971A750B5B0062BE40 /* CluItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItemViewController.m; sourceTree = "<group>"; };
+		0139CD9F1A750C930062BE40 /* CluItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItem.h; sourceTree = "<group>"; };
+		0139CDA01A750C930062BE40 /* CluItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItem.m; sourceTree = "<group>"; };
+		0139CDA31A7516000062BE40 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +88,13 @@
 		0139CD6A1A750A500062BE40 /* Clue */ = {
 			isa = PBXGroup;
 			children = (
+				0139CD941A750AA20062BE40 /* Components */,
+				0139CD951A750AA20062BE40 /* Model */,
 				0139CD6F1A750A500062BE40 /* AppDelegate.h */,
 				0139CD701A750A500062BE40 /* AppDelegate.m */,
-				0139CD751A750A500062BE40 /* ViewController.h */,
-				0139CD761A750A500062BE40 /* ViewController.m */,
 				0139CD781A750A500062BE40 /* Main.storyboard */,
 				0139CD7B1A750A500062BE40 /* Images.xcassets */,
 				0139CD7D1A750A500062BE40 /* LaunchScreen.xib */,
-				0139CD721A750A500062BE40 /* Clue.xcdatamodeld */,
 				0139CD6B1A750A500062BE40 /* Supporting Files */,
 			);
 			path = Clue;
@@ -101,6 +105,7 @@
 			children = (
 				0139CD6C1A750A500062BE40 /* Info.plist */,
 				0139CD6D1A750A500062BE40 /* main.m */,
+				0139CDA31A7516000062BE40 /* data.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,6 +125,25 @@
 				0139CD891A750A500062BE40 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0139CD941A750AA20062BE40 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0139CD961A750B5B0062BE40 /* CluItemViewController.h */,
+				0139CD971A750B5B0062BE40 /* CluItemViewController.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0139CD951A750AA20062BE40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0139CD721A750A500062BE40 /* Clue.xcdatamodeld */,
+				0139CD9F1A750C930062BE40 /* CluItem.h */,
+				0139CDA01A750C930062BE40 /* CluItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +229,7 @@
 				0139CD7A1A750A500062BE40 /* Main.storyboard in Resources */,
 				0139CD7F1A750A500062BE40 /* LaunchScreen.xib in Resources */,
 				0139CD7C1A750A500062BE40 /* Images.xcassets in Resources */,
+				0139CDA41A7516000062BE40 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,9 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0139CD981A750B5B0062BE40 /* CluItemViewController.m in Sources */,
 				0139CD741A750A500062BE40 /* Clue.xcdatamodeld in Sources */,
 				0139CD711A750A500062BE40 /* AppDelegate.m in Sources */,
-				0139CD771A750A500062BE40 /* ViewController.m in Sources */,
+				0139CDA11A750C930062BE40 /* CluItem.m in Sources */,
 				0139CD6E1A750A500062BE40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +462,8 @@
 				0139CD731A750A500062BE40 /* Clue.xcdatamodel */,
 			);
 			currentVersion = 0139CD731A750A500062BE40 /* Clue.xcdatamodel */;
-			path = Clue.xcdatamodeld;
+			name = Clue.xcdatamodeld;
+			path = ../Clue.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

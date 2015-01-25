@@ -1,0 +1,39 @@
+{
+    "name" : "root",
+    "imageName" : "root",
+    "children" :  [
+                 {
+                 "name" : "Personne",
+                 "imageName" : "Personne",
+                 "children" : [
+                 		{
+                 		"name" : "Patrick",
+                 		"imageName" : "Patrick"            
+                 		},
+                 		{
+                 			"name" : "Jean-Baptiste",
+                 			"imageName" : "Jean-Baptiste"
+                 		},
+                 		{
+							"name" : "Barthélemy",
+                 			"imageName" : "Barthélemy"
+                 		}
+                 		]
+                },
+                {
+                	"name" : "lieu",
+                	"imageName" : "lieu",
+                	"children" : 
+                	[
+                		{
+                			"name" : "ici",
+                			"imageName" : "ici"
+                		},
+                		{
+							"name" : "Tremblay"
+                		}
+                	]
+
+                 }
+				]
+}

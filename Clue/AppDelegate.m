@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "CluItem.h"
+#import "CluItemViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, readwrite, strong) CluItem *rootItem;
 
 @end
 
@@ -16,8 +20,70 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.rootItem = [self loadRootItem];
+    if(self.rootItem == nil)
+    {
+        self.rootItem = [self loadDefaultItems];
+    }
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    CluItemViewController *myStoryBoardInitialViewController = [storyboard instantiateViewControllerWithIdentifier:@"MyFirstController"];
+    myStoryBoardInitialViewController.item = self.rootItem;
+    
+    self.window.rootViewController = myStoryBoardInitialViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+- (CluItem *)loadRootItem
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"CluItem"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"root"];
+    request.predicate = predicate;
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    if([result count]>0){
+        return [result lastObject];
+    }
+    
+    return nil;
+}
+
+#warning TODO sortir ça dans une extension dataaccess
+- (CluItem *)loadDefaultItems
+{
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"]];
+    NSDictionary *jsonRoot = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    CluItem *root = [NSEntityDescription insertNewObjectForEntityForName:@"CluItem" inManagedObjectContext:[self managedObjectContext]];
+    root.name = jsonRoot[@"name"];
+    root.name = jsonRoot[@"imageName"];
+    
+    [self addChildrenToParentItem:root withArray:jsonRoot[@"children"]];
+    
+    [self saveContext];
+    
+    return root;
+}
+
+- (void)addChildrenToParentItem:(CluItem *)parentItem withArray:(NSArray *)jsonChildren
+{
+    for(NSDictionary *jsonChild in jsonChildren)
+    {
+        CluItem *child = [NSEntityDescription insertNewObjectForEntityForName:@"CluItem" inManagedObjectContext:[self managedObjectContext]];
+        child.name = jsonChild[@"name"];
+        child.name = jsonChild[@"imageName"];
+        
+        [self addChildrenToParentItem:child withArray:jsonChild[@"children"]];
+        
+        [child setParent:parentItem];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
