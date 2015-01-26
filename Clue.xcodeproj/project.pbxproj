@@ -200,6 +200,7 @@
 				TargetAttributes = {
 					0139CD671A750A500062BE40 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 56Y85MPTHY;
 					};
 					0139CD831A750A500062BE40 = {
 						CreatedOnToolsVersion = 6.1;
@@ -450,6 +451,7 @@
 				0139CD901A750A500062BE40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0139CD911A750A500062BE40 /* Build configuration list for PBXNativeTarget "ClueTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +460,7 @@
 				0139CD931A750A500062BE40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

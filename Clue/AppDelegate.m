@@ -40,6 +40,8 @@
     return YES;
 }
 
+#warning TODO launch screen death to stock
+
 - (CluItem *)loadRootItem
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"CluItem"];
