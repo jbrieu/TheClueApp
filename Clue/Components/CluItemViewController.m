@@ -22,14 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if(self.item.name!=nil && self.item.children.count == 0)
-    {
-        self.itemNameLabel.text = self.item.name;
-    }else if (self.item.children.count > 0){
-        self.itemNameLabel.text = @"(NL)Choisissez une notion";
-    }else{
-        self.itemNameLabel.text = @"(NL)Aucun choix";
-    }
+    [self setupForItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,8 +48,39 @@
     return cell;
 }
 
-#warning TODO selection
-#warning TODO mettre dans un navigation et faire le segue (titre = nom courant)
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CluItem *selectedItem = [[self.item.children allObjects] objectAtIndex:indexPath.row];
+    return [selectedItem.children count]>0;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CluItem *selectedItem = [[self.item.children allObjects] objectAtIndex:indexPath.row];
+    if([selectedItem.children count]>0)
+    {
+        self.item = selectedItem;
+        [self setupForItem];
+    }
+}
+
+#pragma mark - private
+-(void)setupForItem
+{
+    if(self.item.name!=nil && self.item.children.count == 0)
+    {
+        self.itemNameLabel.text = self.item.name;
+    }else if (self.item.children.count > 0){
+        self.itemNameLabel.text = @"(NL)Choisissez une notion";
+    }else{
+        self.itemNameLabel.text = @"(NL)Aucun choix";
+    }
+    
+    [self.children reloadData];
+}
+
+#warning TODO KVO sur item plutôt que lancer setupforitem tout seul
+#warning TODO selection seulement si feuille
 #warning TODO navigation back
 #warning TODO ajouter un breadcrum et une notion la phrase courante
 #warning TODO reset de la phrase courant
