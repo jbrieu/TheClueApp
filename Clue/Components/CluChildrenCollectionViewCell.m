@@ -9,7 +9,5 @@
 #import "CluChildrenCollectionViewCell.h"
 
 @implementation CluChildrenCollectionViewCell
-#warning TODO design cellule (rectangle arrondi si children)
-#warning TODO design cellule (rond si feuille)
-#warning TODO ajouter image
+
 @end

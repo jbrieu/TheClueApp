@@ -40,8 +40,6 @@
     return YES;
 }
 
-#warning TODO launch screen death to stock
-
 - (CluItem *)loadRootItem
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"CluItem"];
@@ -57,7 +55,6 @@
     return nil;
 }
 
-#warning TODO sortir ça dans une extension dataaccess
 - (CluItem *)loadDefaultItems
 {
     NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"]];

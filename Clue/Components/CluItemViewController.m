@@ -79,16 +79,6 @@
     [self.children reloadData];
 }
 
-#warning TODO KVO sur item plutôt que lancer setupforitem tout seul
-#warning TODO selection seulement si feuille
-#warning TODO navigation back
-#warning TODO ajouter un breadcrum et une notion la phrase courante
-#warning TODO reset de la phrase courant
-#warning TODO reset de toute la base
-#warning TODO bouton ajouter
-#warning TODO cellule "peu importe" (ajouter dans json ?)
-
-
 /*
 #pragma mark - Navigation
 
