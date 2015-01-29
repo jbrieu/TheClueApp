@@ -21,7 +21,7 @@
                  		]
                 },
                 {
-                	"name" : "lieu",
+                	"name" : "Lieu",
                 	"imageName" : "lieu",
                 	"children" : 
                 	[
@@ -34,6 +34,35 @@
                 		}
                 	]
 
-                 }
+                 },
+                   {
+                   "name" : "Objet",
+                   "imageName" : "objet",
+                   "children" :
+                   [
+                    {
+                    "name" : "Visible",
+                    "children" :
+                    [
+                     {
+                     "name" : "Lit"
+                     },
+                     {
+                     "name" : "Appareils"
+                     },
+                     {
+                     "name" : "Table"
+                     },
+                     {
+                     "name" : "Chaise"
+                     }
+                    ]
+                    },
+                    {
+                    "name" : "Invisible"
+                    }
+                    ]
+                   
+                   }
 				]
 }

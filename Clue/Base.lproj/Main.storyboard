@@ -44,24 +44,61 @@
                                             <rect key="frame" x="0.0" y="0.0" width="261" height="258"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-H5-32S">
-                                                    <rect key="frame" x="66" y="97" width="128" height="64"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClueApp_CategoryWord_Cell" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-JH-tDZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-H5-32S">
+                                                    <rect key="frame" x="17" y="97" width="217" height="66"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="kA9-H5-32S" firstAttribute="centerX" secondItem="dUq-S3-EWD" secondAttribute="centerX" id="R8u-6h-ECw"/>
-                                            <constraint firstItem="kA9-H5-32S" firstAttribute="top" secondItem="dUq-S3-EWD" secondAttribute="topMargin" constant="89" id="aH2-uq-0cJ"/>
-                                            <constraint firstItem="kA9-H5-32S" firstAttribute="leading" secondItem="dUq-S3-EWD" secondAttribute="leadingMargin" constant="58" id="yUA-ig-ab0"/>
-                                            <constraint firstItem="kA9-H5-32S" firstAttribute="centerY" secondItem="dUq-S3-EWD" secondAttribute="centerY" id="yuV-FM-9Pp"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="kA9-H5-32S" secondAttribute="bottom" constant="87" id="3oq-b4-fM1"/>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="top" secondItem="dUq-S3-EWD" secondAttribute="topMargin" constant="89" id="6yz-N2-ghN"/>
+                                            <constraint firstItem="wTt-JH-tDZ" firstAttribute="top" secondItem="dUq-S3-EWD" secondAttribute="top" id="Of3-4x-SlJ"/>
+                                            <constraint firstItem="wTt-JH-tDZ" firstAttribute="centerX" secondItem="kA9-H5-32S" secondAttribute="centerX" id="efe-Ar-mXH"/>
+                                            <constraint firstItem="wTt-JH-tDZ" firstAttribute="leading" secondItem="dUq-S3-EWD" secondAttribute="leading" id="xTr-Mu-oa0"/>
+                                            <constraint firstItem="kA9-H5-32S" firstAttribute="leading" secondItem="dUq-S3-EWD" secondAttribute="leadingMargin" constant="9" id="zJn-R6-Nl4"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="childrenNameLabel" destination="kA9-H5-32S" id="Q0W-ie-hog"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="leafCell" id="P0R-su-kq6" customClass="CluChildrenCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="261" height="258"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClueApp_LeafWord_Cell" translatesAutoresizingMaskIntoConstraints="NO" id="jPw-3I-lI5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yz-PL-E6c">
+                                                    <rect key="frame" x="22" y="94" width="217" height="70"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="39"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1Yz-PL-E6c" firstAttribute="top" secondItem="P0R-su-kq6" secondAttribute="topMargin" constant="86" id="050-V9-Vuo"/>
+                                            <constraint firstItem="1Yz-PL-E6c" firstAttribute="centerY" secondItem="P0R-su-kq6" secondAttribute="centerY" id="BhQ-sm-AEW"/>
+                                            <constraint firstItem="jPw-3I-lI5" firstAttribute="leading" secondItem="P0R-su-kq6" secondAttribute="leading" id="OwP-64-hGa"/>
+                                            <constraint firstItem="1Yz-PL-E6c" firstAttribute="leading" secondItem="P0R-su-kq6" secondAttribute="leadingMargin" constant="14" id="S8j-Kt-7Lj"/>
+                                            <constraint firstItem="1Yz-PL-E6c" firstAttribute="centerX" secondItem="P0R-su-kq6" secondAttribute="centerX" id="m0r-ne-A2p"/>
+                                            <constraint firstItem="jPw-3I-lI5" firstAttribute="top" secondItem="P0R-su-kq6" secondAttribute="top" id="vDU-JN-TGm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="childrenNameLabel" destination="1Yz-PL-E6c" id="5ks-4n-CYF"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -91,4 +128,8 @@
             <point key="canvasLocation" x="375" y="304"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ClueApp_CategoryWord_Cell" width="250" height="250"/>
+        <image name="ClueApp_LeafWord_Cell" width="250" height="250"/>
+    </resources>
 </document>

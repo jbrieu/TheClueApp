@@ -43,8 +43,16 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CluChildrenCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.childrenNameLabel.text = [[[self.item.children allObjects] objectAtIndex:indexPath.row] name];
+    CluItem *item = [[self.item.children allObjects] objectAtIndex:indexPath.row];
+    CluChildrenCollectionViewCell *cell;
+    if([item.children count]>0){
+    cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    }else{
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"leafCell" forIndexPath:indexPath];
+    }
+    
+    
+    cell.childrenNameLabel.text =  item.name;
     return cell;
 }
 
@@ -67,7 +75,7 @@
 #pragma mark - private
 -(void)setupForItem
 {
-    if(self.item.name!=nil && self.item.children.count == 0)
+    if(self.item.name!=nil)
     {
         self.itemNameLabel.text = self.item.name;
     }else if (self.item.children.count > 0){
