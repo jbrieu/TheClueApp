@@ -25,7 +25,7 @@
     
     [self setupForItem];
     
-    self.backButton.titleLabel.text = @"<retour";
+    [self.backButton setTitle:@"retour" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
