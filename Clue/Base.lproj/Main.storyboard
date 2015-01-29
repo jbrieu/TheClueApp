@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lya-lv-g18">
-                                <rect key="frame" x="75" y="36" width="450" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Isd-zD-gm3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yo7-jD-Yoh">
                                 <rect key="frame" x="16" y="90" width="568" height="490"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -110,21 +101,40 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="AjW-rQ-Qag"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whY-jh-fCm">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="od4-jr-xRI">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="fuU-v2-4gl">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sPG-aD-C9I">
+                                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="(NL)Back"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="few-0w-ihl"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lya-lv-g18" firstAttribute="centerX" secondItem="Yo7-jD-Yoh" secondAttribute="centerX" id="2D6-Ti-YxM"/>
+                            <constraint firstItem="whY-jh-fCm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="02K-Vw-0Q2"/>
                             <constraint firstItem="Yo7-jD-Yoh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="C3Q-Sv-rWX"/>
-                            <constraint firstItem="Lya-lv-g18" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="DP9-U7-udp"/>
-                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="top" secondItem="Lya-lv-g18" secondAttribute="bottom" constant="8" symbolic="YES" id="OIX-cR-jBE"/>
-                            <constraint firstItem="Lya-lv-g18" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="Pp4-1x-Uyy"/>
+                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="centerX" secondItem="whY-jh-fCm" secondAttribute="centerX" id="iaO-H0-nhk"/>
+                            <constraint firstItem="whY-jh-fCm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p5c-j0-nO0"/>
                             <constraint firstItem="Yo7-jD-Yoh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tJ3-wq-SME"/>
+                            <constraint firstItem="Yo7-jD-Yoh" firstAttribute="top" secondItem="whY-jh-fCm" secondAttribute="bottom" constant="26" id="tZe-qh-JKv"/>
                             <constraint firstAttribute="bottom" secondItem="Yo7-jD-Yoh" secondAttribute="bottom" constant="20" symbolic="YES" id="uXQ-37-C6h"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="sPG-aD-C9I" id="TNu-NH-ANj"/>
                         <outlet property="children" destination="Yo7-jD-Yoh" id="McY-IB-cvR"/>
-                        <outlet property="itemNameLabel" destination="Lya-lv-g18" id="dv1-ds-XPF"/>
+                        <outlet property="navigationTitle" destination="od4-jr-xRI" id="WCk-pu-0ga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

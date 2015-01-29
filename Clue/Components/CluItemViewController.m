@@ -12,8 +12,9 @@
 
 @interface CluItemViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *children;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationTitle;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     
     [self setupForItem];
+    
+    self.backButton.titleLabel.text = @"<retour";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,19 +75,28 @@
     }
 }
 
+#pragma mark - buttons
+
+- (IBAction)backButtonPressed:(id)sender {
+    self.item = self.item.parent;
+    [self setupForItem];
+}
+
 #pragma mark - private
 -(void)setupForItem
 {
     if(self.item.name!=nil)
     {
-        self.itemNameLabel.text = self.item.name;
+        self.navigationTitle.title = self.item.name;
     }else if (self.item.children.count > 0){
-        self.itemNameLabel.text = @"(NL)Choisissez une notion";
+        self.navigationTitle.title = @"(NL)Choisissez une notion";
     }else{
-        self.itemNameLabel.text = @"(NL)Aucun choix";
+        self.navigationTitle.title = @"(NL)Aucun choix";
     }
     
     [self.children reloadData];
+    
+    self.backButton.hidden = (self.item.parent==nil);
 }
 
 /*
