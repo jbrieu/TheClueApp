@@ -18,6 +18,7 @@
 		0139CDA41A7516000062BE40 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0139CDA31A7516000062BE40 /* data.json */; };
 		0139CDA71A7595A10062BE40 /* CluChildrenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA61A7595A10062BE40 /* CluChildrenCollectionViewCell.m */; };
 		0139CDAA1A75984B0062BE40 /* CluItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0139CDA91A75984B0062BE40 /* CluItem.m */; };
+		01D7C9F71A7B72F800609879 /* CluItem+DataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D7C9F61A7B72F800609879 /* CluItem+DataAccess.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		0139CDA61A7595A10062BE40 /* CluChildrenCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluChildrenCollectionViewCell.m; sourceTree = "<group>"; };
 		0139CDA81A75984B0062BE40 /* CluItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CluItem.h; sourceTree = "<group>"; };
 		0139CDA91A75984B0062BE40 /* CluItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CluItem.m; sourceTree = "<group>"; };
+		01D7C9F51A7B72F800609879 /* CluItem+DataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CluItem+DataAccess.h"; sourceTree = "<group>"; };
+		01D7C9F61A7B72F800609879 /* CluItem+DataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CluItem+DataAccess.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				0139CD721A750A500062BE40 /* Clue.xcdatamodeld */,
 				0139CDA81A75984B0062BE40 /* CluItem.h */,
 				0139CDA91A75984B0062BE40 /* CluItem.m */,
+				01D7C9F51A7B72F800609879 /* CluItem+DataAccess.h */,
+				01D7C9F61A7B72F800609879 /* CluItem+DataAccess.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				0139CDA71A7595A10062BE40 /* CluChildrenCollectionViewCell.m in Sources */,
 				0139CD711A750A500062BE40 /* AppDelegate.m in Sources */,
 				0139CD6E1A750A500062BE40 /* main.m in Sources */,
+				01D7C9F71A7B72F800609879 /* CluItem+DataAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

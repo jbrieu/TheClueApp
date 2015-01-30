@@ -9,12 +9,14 @@
 #import "CluItemViewController.h"
 #import "CluItem.h"
 #import "CluChildrenCollectionViewCell.h"
+#import "CluItem+DataAccess.h"
 
-@interface CluItemViewController ()
+@interface CluItemViewController () <CluChildrenCollectionViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *children;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationTitle;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @end
 
@@ -26,6 +28,7 @@
     [self setupForItem];
     
     [self.backButton setTitle:@"retour" forState:UIControlStateNormal];
+    [self.addButton setTitle:@"ajouter" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,15 +52,18 @@
     CluItem *item = [[self.item.children allObjects] objectAtIndex:indexPath.row];
     CluChildrenCollectionViewCell *cell;
     if([item.children count]>0){
-    cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     }else{
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"leafCell" forIndexPath:indexPath];
     }
     
+    cell.delegate = self;
+    [cell setupWithItem:item];
     
-    cell.childrenNameLabel.text =  item.name;
     return cell;
 }
+
+
 
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -82,6 +88,11 @@
     [self setupForItem];
 }
 
+- (IBAction)addButtonPressed:(id)sender {
+    [self.item addBlankChildInMOC:self.item.managedObjectContext];
+    [self setupForItem];
+}
+
 #pragma mark - private
 -(void)setupForItem
 {
@@ -97,6 +108,14 @@
     [self.children reloadData];
     
     self.backButton.hidden = (self.item.parent==nil);
+    self.addButton.hidden = ([self.item numberOfChildrenWithNoName]>0);
+}
+
+-(void)CluChildrenCollectionViewCellDidChangeName:(NSString *)newName forItem:(CluItem *)item
+{
+    [item renameWord:newName inMOC:item.managedObjectContext];
+    
+    [self setupForItem];
 }
 
 /*

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CluItem;
 
-@interface CluChildrenCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic, readwrite) IBOutlet UILabel *childrenNameLabel;
+@protocol CluChildrenCollectionViewCellDelegate <NSObject>
+
+-(void)CluChildrenCollectionViewCellDidChangeName:(NSString *)newName forItem:(CluItem *)item;
+
+@end
+
+@interface CluChildrenCollectionViewCell : UICollectionViewCell <UITextFieldDelegate>
+@property (strong, nonatomic, readonly) CluItem *item;
+@property (strong, nonatomic, readwrite) id<CluChildrenCollectionViewCellDelegate> delegate;
+
+-(void) setupWithItem:(CluItem *)inItem;
 
 @end

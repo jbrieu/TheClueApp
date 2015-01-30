@@ -80,19 +80,28 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(NL)word" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9nF-A8-uH2">
+                                                    <rect key="frame" x="22" y="114" width="217" height="30"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="39"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="9nF-A8-uH2" firstAttribute="centerY" secondItem="1Yz-PL-E6c" secondAttribute="centerY" id="4rT-2r-2ra"/>
                                             <constraint firstItem="1Yz-PL-E6c" firstAttribute="centerY" secondItem="P0R-su-kq6" secondAttribute="centerY" id="BhQ-sm-AEW"/>
                                             <constraint firstItem="jPw-3I-lI5" firstAttribute="leading" secondItem="P0R-su-kq6" secondAttribute="leading" id="OwP-64-hGa"/>
+                                            <constraint firstItem="9nF-A8-uH2" firstAttribute="trailing" secondItem="1Yz-PL-E6c" secondAttribute="trailing" id="SCe-d1-77d"/>
+                                            <constraint firstItem="9nF-A8-uH2" firstAttribute="leading" secondItem="1Yz-PL-E6c" secondAttribute="leading" id="czO-vU-Ajg"/>
                                             <constraint firstItem="1Yz-PL-E6c" firstAttribute="centerX" secondItem="P0R-su-kq6" secondAttribute="centerX" id="m0r-ne-A2p"/>
                                             <constraint firstItem="1Yz-PL-E6c" firstAttribute="leading" secondItem="P0R-su-kq6" secondAttribute="leadingMargin" constant="14" id="nuv-Sv-60c"/>
                                             <constraint firstItem="jPw-3I-lI5" firstAttribute="top" secondItem="P0R-su-kq6" secondAttribute="top" id="vDU-JN-TGm"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="childrenNameLabel" destination="1Yz-PL-E6c" id="5ks-4n-CYF"/>
+                                            <outlet property="wordTextField" destination="9nF-A8-uH2" id="Dcn-0t-jQV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -109,10 +118,22 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sPG-aD-C9I">
                                                 <rect key="frame" x="-23" y="-15" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="(NL)Back"/>
                                                 <connections>
                                                     <action selector="backButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="few-0w-ihl"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="NKV-Ie-E9J">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mxo-na-huF">
+                                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="(NL)Add">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m5P-gg-mUh"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -132,6 +153,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="Mxo-na-huF" id="ULd-H6-jTP"/>
                         <outlet property="backButton" destination="sPG-aD-C9I" id="TNu-NH-ANj"/>
                         <outlet property="children" destination="Yo7-jD-Yoh" id="McY-IB-cvR"/>
                         <outlet property="navigationTitle" destination="od4-jr-xRI" id="WCk-pu-0ga"/>
